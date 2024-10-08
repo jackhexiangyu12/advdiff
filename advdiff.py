@@ -37,6 +37,7 @@ args = parser.parse_args()
 
 def load_model_from_config(config, ckpt):
     print(f"Loading model from {ckpt}")
+    # print(f"Config: {config}")
     pl_sd = torch.load(ckpt)#, map_location="cpu")
     sd = pl_sd["state_dict"]
     model = instantiate_from_config(config.model)
