@@ -121,6 +121,7 @@ def main():
     save_img = img.permute(0,2,3,1)
 
     np.savez(os.path.join(args.save_dir, 'AdvDiff.npz'), save_img.detach().cpu().numpy(), labels.detach().cpu().numpy())
+    save_image(save_img, os.path.join(args.save_dir, 'AdvDiff.png'), nrow=n_samples_per_class)
 
             
 if __name__ == '__main__':
