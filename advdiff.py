@@ -67,7 +67,8 @@ def main():
     vic_model.eval()
     sampler = DDIMSampler(model, vic_model=vic_model)
 
-    classes =  np.arange(1000)
+    # classes =  np.arange(1000)
+    classes = np.arange(1)
     n_samples_per_class = args.batch_size
 
     weights = ResNet50_Weights.DEFAULT
