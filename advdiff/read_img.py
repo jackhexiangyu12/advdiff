@@ -12,7 +12,10 @@ img_data = data['arr_0']
 img_data = np.clip(img_data, 0, 255)
 
 # 转换为图像
-img = Image.fromarray((img_data[0] * 255).astype(np.uint8))
-img = Image.fromarray((img_data[2] * 255).astype(np.uint8))
-# 保存图像
-img.save('image.png')
+for i in range(100):
+    img = Image.fromarray((img_data[i] * 255).astype(np.uint8))
+    img.save(f'image_{i}.png')
+# img = Image.fromarray((img_data[0] * 255).astype(np.uint8))
+# img = Image.fromarray((img_data[2] * 255).astype(np.uint8))
+# # 保存图像
+# img.save('image.png')
